@@ -8,11 +8,13 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def hello_world():
     return render_template("home.html")
 
 
 @app.route('/', methods=["POST"])
+@cross_origin()
 def predict():
     # Source ----------------------------
     Source = request.form["source"]
